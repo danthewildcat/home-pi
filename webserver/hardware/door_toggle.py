@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
-import time
+from time import sleep
+from gpiozero import DigitalOutputDevice
 from .base import BaseDevice
 
 class DoorToggle(BaseDevice):
+    device_class = DigitalOutputDevice
+
     def open_door(self):
-        self._device.on()
-        time.sleep(3)
-        self._device.off()
+        device = self._device
+        while True:
+            device.on()
+            sleep(3)
+            device.off()
+            return
