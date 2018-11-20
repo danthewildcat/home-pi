@@ -45,7 +45,7 @@ module.exports = {
   env: {
     // Don't assume we're targeting either node or a browser.
     // These flags might be set by one of our plugins.
-    node: false,
+    node: true,
     browser: false,
     // But it's reasonable to assume we're targeting one or the other.
     'shared-node-browser': true,
