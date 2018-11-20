@@ -1,0 +1,46 @@
+{
+  "name": "home-door",
+  "version": "1.0.0",
+  "description": "Control a basic analog door intercom",
+  "repository": "git@github.com:danthewildcat/home-pi.git",
+  "author": "Dan Sutich",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=production exec node ./lib/index.js",
+    "start-dev": "NODE_ENV=development exec babel-node ./src/index.js",
+    "eslint": "eslint src",
+    "flow": "flow src",
+    "lint": "yarn -s eslint && yarn -s flow"
+  },
+  "dependencies": {
+    "babel-runtime": "6.26.0",
+    "body-parser": "1.18.3",
+    "cors": "2.8.5",
+    "dotenv": "6.1.0",
+    "express": "4.16.4",
+    "express-session": "1.15.6",
+    "rpi-gpio": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.1",
+    "babel-plugin-syntax-class-properties": "6.13.0",
+    "babel-plugin-syntax-flow": "6.18.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-flow-comments": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-env": "1.7.0",
+    "eslint": "5.9.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-flowtype": "3.2.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-no-use-extend-native": "0.3.12",
+    "eslint-plugin-prefer-object-spread": "1.2.1",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-react": "7.11.1",
+    "eslint-plugin-unicorn": "6.0.1",
+    "flow-bin": "0.86.0"
+  }
+}
