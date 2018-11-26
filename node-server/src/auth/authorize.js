@@ -2,7 +2,7 @@
 
 import {
   type Client,
-  type User,
+  type Subject,
 } from './types';
 
 type UsernameAuthArgs = {|
@@ -25,7 +25,7 @@ async function getClient({clientId}): Promise<Client> {
   };
 }
 
-async function validateUsernameAuth({username, password}: UsernameAuthArgs): Promise<User> {
+async function validateUsernameAuth({username, password}: UsernameAuthArgs): Promise<Subject> {
   return {
     id: 1,
     username,
@@ -35,10 +35,10 @@ async function validateUsernameAuth({username, password}: UsernameAuthArgs): Pro
 
 export type AuthorizationData = {|
   +client: Client,
-  +user: User,
+  +subject: Subject,
 |};
 
-export async function getAuthorizedUser(args: AuthArgs): Promise<AuthorizationData> {
+export async function getAuthorizedSubject(args: AuthArgs): Promise<AuthorizationData> {
   // Will throw an error if invalid, otherwise returns undefined
   const {
     clientId,
@@ -51,10 +51,10 @@ export async function getAuthorizedUser(args: AuthArgs): Promise<AuthorizationDa
     throw new Error('Missing required credentials for username/password auth!');
   }
   const client = await getClient({clientId});
-  const user = await validateUsernameAuth({username, password});
+  const subject = await validateUsernameAuth({username, password});
 
   return {
     client,
-    user,
+    subject,
   };
 }

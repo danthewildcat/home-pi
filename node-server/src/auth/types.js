@@ -5,7 +5,7 @@ export type Client = {|
   +name?: ?string,
 |};
 
-export type User = {
+export type Subject = {
   +id: string | number,
   +username?: ?string,
   +password?: ?string,

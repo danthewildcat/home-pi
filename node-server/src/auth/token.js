@@ -3,7 +3,7 @@
 import jwt from 'express-jwt';
 
 import {
-  type User,
+  type Subject,
 } from './types';
 
 import {
@@ -12,7 +12,7 @@ import {
 
 type CreateTokenArgs = {|
   +config: AuthConfig,
-  +user: User,
+  +subject: Subject,
   +payload: mixed,
 |};
 
@@ -24,12 +24,12 @@ export function createToken(args: CreateTokenArgs): string {
       issuer,
       privateKey,
     },
-    user,
+    subject,
     payload,
   } = args;
   const signOptions = {
     issuer,
-    subject: user.id,
+    subject: subject.id,
     audience,
     expiresIn,
     algorithm: 'RS256',

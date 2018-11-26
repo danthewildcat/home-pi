@@ -12,7 +12,7 @@ import getConfig from '../config';
 
 import {mixedVerbHandler} from '../utils/express';
 import {
-  getAuthorizedUser,
+  getAuthorizedSubject,
 
   type AuthArgs,
 } from './authorize';
@@ -30,10 +30,10 @@ router.post('/token', async (req: Request, resp: Response, _: NextFunction): Pro
       error: 'Empty request body. Must provide auth credentials.',
     });
   }
-  const {user, client} = await getAuthorizedUser(body);
+  const {subject, client} = await getAuthorizedSubject(body);
   const token = await createToken({
     config: config.auth,
-    user,
+    subject,
     payload: {
       client,
     },
