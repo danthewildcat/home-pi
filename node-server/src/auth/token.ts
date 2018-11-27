@@ -1,18 +1,18 @@
-import jwt from 'express-jwt';
-
+import jwt, {
+  SignOptions,
+} from 'jsonwebtoken';
 import {
-  type Subject,
+  AuthConfig,
+} from './';
+import {
+  Subject,
 } from './types';
 
-import {
-  type AuthConfig,
-} from '.';
-
-type CreateTokenArgs = {|
-  +config: AuthConfig,
-  +subject: Subject,
-  +payload: mixed,
-|};
+interface CreateTokenArgs {
+  readonly config: AuthConfig;
+  readonly subject: Subject;
+  readonly payload: any;
+}
 
 export function createToken(args: CreateTokenArgs): string {
   const {
@@ -25,11 +25,11 @@ export function createToken(args: CreateTokenArgs): string {
     subject,
     payload,
   } = args;
-  const signOptions = {
+  const signOptions: SignOptions = {
     issuer,
-    subject: subject.id,
     audience,
     expiresIn,
+    subject: subject.id.toString(),
     algorithm: 'RS256',
   };
   return jwt.sign(payload, privateKey, signOptions);

@@ -1,13 +1,13 @@
 import dotenv from 'dotenv';
 
 import {
-  type AuthConfig,
+  AuthConfig,
 } from './auth';
 
-export type Config = {|
-  +auth: AuthConfig,
-  +debug: boolean,
-|};
+export interface Config {
+  readonly debug: boolean;
+  readonly auth: AuthConfig;
+}
 
 function requireEnv(fieldName: string): string {
   const val = process.env[fieldName];
@@ -29,6 +29,7 @@ export default function getConfig(): Config {
   const debug = NODE_ENV === 'development';
 
   return {
+    debug,
     auth: {
       pubKey: requireEnv('AUTH_PUB_KEY'),
       privateKey: requireEnv('AUTH_PRIVATE_KEY'),
@@ -36,6 +37,5 @@ export default function getConfig(): Config {
       issuer: requireEnv('AUTH_ISSUER'),
       expiresIn: parseInt(requireEnv('AUTH_TOKEN_EXPIRES_IN'), 10),
     },
-    debug,
   };
 }

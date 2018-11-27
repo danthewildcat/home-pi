@@ -1,20 +1,9 @@
 import {
-  type Client,
-  type Subject,
+  Client,
+  Subject,
 } from './types';
 
-type UsernameAuthArgs = {|
-  +username: string,
-  +password: string,
-|};
-
-export type AuthArgs = {
-  +clientId?: ?string,
-  +username?: ?string,
-  +password?: ?string,
-};
-
-async function getClient({clientId}): Promise<Client> {
+async function getClient({clientId}: {clientId: string}) {
   if (clientId == null || clientId === '') {
     throw new Error('Must provide valid value for clientId.');
   }
@@ -25,20 +14,31 @@ async function getClient({clientId}): Promise<Client> {
   };
 }
 
-async function validateUsernameAuth({username, password}: UsernameAuthArgs): Promise<Subject> {
+interface UsernameAuthArgs {
+  readonly username: string;
+  readonly password: string;
+}
+
+async function validateUsernameAuth({username, password}: UsernameAuthArgs) {
   return {
-    id: 1,
     username,
     password,
+    id: 1,
   };
 }
 
-export type AuthorizationData = {|
-  +client: Client,
-  +subject: Subject,
-|};
+interface AuthorizedSubjectArgs {
+  readonly clientId: string;
+  readonly username?: string;
+  readonly password?: string;
+}
 
-export async function getAuthorizedSubject(args: AuthArgs): Promise<AuthorizationData> {
+interface AuthorizeSubjectResponse {
+  readonly subject: Subject;
+  readonly client: Client;
+}
+
+export async function getAuthorizedSubject(args: AuthorizedSubjectArgs): Promise<AuthorizeSubjectResponse> {
   // Will throw an error if invalid, otherwise returns undefined
   const {
     clientId,
