@@ -1,0 +1,40 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint-config-airbnb"
+    ],
+    "rulesDirectory": [
+        "node_modules/tslint-eslint-rules/dist/rules",
+        "node_modules/tslint-import-rules/dist/rules"
+    ],
+    "rules": {
+        "no-constant-condition": true,
+        "ter-indent": [
+            true,
+            2
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords",
+            "check-format",
+            "allow-leading-underscore"
+        ],
+        "object-curly-spacing": [
+            true,
+            "never",
+            {
+                "arraysInObjects": false,
+                "objectsInObjects": false
+            }
+        ],
+        "tir-spaces-within-import": [
+            true,
+            "never"
+        ],
+        "tir-newline-after-import": [
+            true
+        ],
+        "import-name": false,
+        "ter-arrow-parens": false
+    }
+}

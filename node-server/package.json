@@ -9,11 +9,9 @@
   "scripts": {
     "start": "NODE_ENV=production exec node ./lib/index.js",
     "start-dev": "NODE_ENV=development exec babel-node ./src/index.js",
-    "eslint": "eslint src",
-    "lint": "yarn -s eslint"
+    "lint": "tslint --project ./tsconfig.json --format stylish"
   },
   "dependencies": {
-    "babel-runtime": "6.26.0",
     "body-parser": "1.18.3",
     "cors": "2.8.5",
     "dotenv": "6.1.0",
@@ -24,6 +22,13 @@
   },
   "devDependencies": {
     "@babel/core": "7.1.6",
+    "@types/body-parser": "1.17.0",
+    "@types/cors": "2.8.4",
+    "@types/dotenv": "6.1.0",
+    "@types/express": "4.16.0",
+    "@types/express-jwt": "0.0.40",
+    "@types/express-session": "1.15.11",
+    "@types/node": "10.12.10",
     "tslint": "5.11.0",
     "tslint-config-airbnb": "5.11.1",
     "tslint-eslint-rules": "5.4.0",
