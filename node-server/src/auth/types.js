@@ -2,7 +2,8 @@
 
 export type Client = {|
   +id: string,
-  +name?: ?string,
+  +name: string,
+  +isValid: boolean,
 |};
 
 export type Subject = {

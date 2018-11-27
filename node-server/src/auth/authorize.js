@@ -22,6 +22,8 @@ async function getClient({clientId}): Promise<Client> {
   }
   return {
     id: clientId,
+    name: 'Test Client',
+    isValid: true,
   };
 }
 
