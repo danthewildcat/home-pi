@@ -23,23 +23,11 @@
     "rpi-gpio": "^2.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "10.0.1",
-    "babel-plugin-syntax-class-properties": "6.13.0",
-    "babel-plugin-syntax-flow": "6.18.0",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-flow-comments": "6.22.0",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.7.0",
-    "eslint": "5.9.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-no-use-extend-native": "0.3.12",
-    "eslint-plugin-prefer-object-spread": "1.2.1",
-    "eslint-plugin-promise": "4.0.1",
-    "eslint-plugin-react": "7.11.1",
-    "eslint-plugin-unicorn": "6.0.1",
+    "@babel/core": "7.1.6",
+    "tslint": "5.11.0",
+    "tslint-config-airbnb": "5.11.1",
+    "tslint-eslint-rules": "5.4.0",
+    "tslint-import-rules": "0.3.0",
     "typescript": "3.1.6"
   }
 }
