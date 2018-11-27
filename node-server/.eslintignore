@@ -10,7 +10,6 @@ coverage/cobertura-coverage.xml
 coverage/coverage-final.json
 coverage/lcov-report/**
 coverage/lcov.info
-flow-typed/**
 lib/**
 node_modules/**
 npm-debug.log
