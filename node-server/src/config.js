@@ -1,7 +1,3 @@
-/* @flow */
-// We are intentionally rejecting empty strings as though they are null:
-// flowlint sketchy-null-string:off
-//
 import dotenv from 'dotenv';
 
 import {

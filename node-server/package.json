@@ -10,8 +10,7 @@
     "start": "NODE_ENV=production exec node ./lib/index.js",
     "start-dev": "NODE_ENV=development exec babel-node ./src/index.js",
     "eslint": "eslint src",
-    "flow": "flow src",
-    "lint": "yarn -s eslint && yarn -s flow"
+    "lint": "yarn -s eslint"
   },
   "dependencies": {
     "babel-runtime": "6.26.0",
@@ -34,7 +33,6 @@
     "babel-preset-env": "1.7.0",
     "eslint": "5.9.0",
     "eslint-config-airbnb": "17.1.0",
-    "eslint-plugin-flowtype": "3.2.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-no-use-extend-native": "0.3.12",
@@ -42,6 +40,6 @@
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-unicorn": "6.0.1",
-    "flow-bin": "0.86.0"
+    "typescript": "3.1.6"
   }
 }

@@ -1,5 +1,3 @@
-/* @flow */
-
 import jwt from 'express-jwt';
 
 import {

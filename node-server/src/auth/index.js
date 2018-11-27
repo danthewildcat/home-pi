@@ -1,5 +1,3 @@
-/* @flow */
-
 export {router} from './router';
 
 export type AuthConfig = {|

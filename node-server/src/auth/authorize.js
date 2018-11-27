@@ -1,5 +1,3 @@
-/* @flow */
-
 import {
   type Client,
   type Subject,

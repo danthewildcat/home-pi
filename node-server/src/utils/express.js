@@ -1,5 +1,3 @@
-/* @flow */
-
 import {
   type Middleware,
   type Router,
