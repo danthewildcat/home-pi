@@ -36,19 +36,19 @@ router.post('/token', async (req: Request, resp: Response, _: NextFunction) => {
   return resp.send({token});
 });
 
-router.post('/refresh', async (req: Request, resp: Response, _next: NextFunction) => {
+router.post('/refresh', async (_req: Request, resp: Response, _next: NextFunction) => {
   // TODO: Implement me!
   console.error('Refresh called but is not implemented!');
   return resp.status(500).send('Not implemented!');
 });
 
-router.post('/authorize', async (req: Request, resp: Response, _next: NextFunction) => {
+router.post('/authorize', async (_req: Request, resp: Response, _next: NextFunction) => {
     // TODO: Implement me!
   console.error('Authorize called but is not implemented!');
   return resp.status(500).send('Not implemented!');
 });
 
-router.post('/unauthorize', async (req: Request, resp: Response, _next: NextFunction) => {
+router.post('/unauthorize', async (_req: Request, resp: Response, _next: NextFunction) => {
     // TODO: Implement me!
   console.error('Unauthorize called but is not implemented!');
   return resp.status(500).send('Not implemented!');
