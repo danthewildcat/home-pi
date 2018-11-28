@@ -10,8 +10,8 @@ import {
 @Entity()
 export class Client extends BaseModel {
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  isValid: boolean;
+  isValid!: boolean;
 }

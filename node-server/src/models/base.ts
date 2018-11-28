@@ -11,17 +11,17 @@ import {
 
 export abstract class BaseModel {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id?: number;
 
   @CreateDateColumn()
-  createdAt!: DateTime;
+  createdAt?: DateTime;
 
   @UpdateDateColumn()
-  modifiedAt!: DateTime;
+  modifiedAt?: DateTime;
 
   @Column({
     // Do not return this value unless explicitly asked for
     select: false,
   })
-  deletedAt!: DateTime;
+  deletedAt?: DateTime;
 }

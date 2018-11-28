@@ -16,5 +16,5 @@ export class Subject extends BaseModel {
   password?: string;
 
   @Column()
-  isActive: boolean;
+  isActive!: boolean;
 }
